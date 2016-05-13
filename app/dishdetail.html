@@ -39,11 +39,26 @@
                       <span class='label label-danger label-xs'>{{dishDC.dish.label}} </span>
                       <span class='badge'> {{dishDC.dish.price | currency}} </span>
                       <p > {{dishDC.dish.description}} </p>
+
+                      <div>
+                      <h4 class='inline'>
+                        Customer Comments
+                      <P>Sort by: </P></h4>
+                      <input type='text' ng-model='sorting'>
+                      </div>
                   </div>
 
             </div>
+            <div class='col-xs-12 media-heading'>
+
+
+            </div>
             <div class="col-xs-9 col-xs-offset-1" ng-repeat='comment in dishDC.dish.comments'>
-                <p>{{comment.rating}} </p>
+              <blockquote>
+                <p>{{comment.rating}}  Stars </p>
+                <p>{{comment.comment}}</p>
+                <footer> {{comment.author}} , {{comment.date | date}} </footer>
+              </blockquote>
             </div>
         </div>
 
